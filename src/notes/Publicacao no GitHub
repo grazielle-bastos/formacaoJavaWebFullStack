@@ -1,0 +1,159 @@
+# Como Publicar um Projeto Java do Eclipse no GitHub (Passo a Passo)
+
+Este tutorial ensina como configurar corretamente um projeto Java no Eclipse e publicá-lo no GitHub sem problemas, evitando a duplicação da pasta root e garantindo boas práticas no versionamento de código.
+
+---
+
+## 1️ - Criando e Configurando o Projeto no Eclipse
+
+1. **Abra o Eclipse** e crie um novo projeto Java:
+   - `File` → `New` → `Java Project`
+   - Nomeie o projeto (exemplo: `formacaoJavaWebFullStack`)
+   - Clique em `Finish`
+
+2. **Verifique a estrutura da pasta** do projeto no seu computador:
+   - O caminho típico pode ser algo como:
+     ```
+     C:\development\formacaoJavaWebFullStack
+     ```
+   - A pasta conterá `src/`, além de arquivos como `.classpath`, `.project` e `.settings/`.
+
+---
+
+## 2️ - Inicializando o Git Corretamente
+
+### ⚠️ **Importante:** Não inicialize o Git na pasta errada! O `.git` deve estar dentro da pasta do projeto, e não no workspace inteiro do Eclipse.
+
+1. **Abra o terminal (Git Bash, CMD ou PowerShell)** e navegue até a pasta do projeto:
+   ```bash
+   cd C:\development\formacaoJavaWebFullStack
+   ```
+
+2. **Inicialize o repositório Git:**
+   ```bash
+   git init
+   ```
+
+3. **Crie um arquivo `.gitignore` e adicione boas práticas:**
+   ```bash
+   echo "# Ignorar arquivos desnecessários do Eclipse e Java
+   .classpath
+   .project
+   .settings/
+   bin/
+   target/
+   *.log
+   *.tmp
+   *.bak
+   *.war
+   *.jar
+   " > .gitignore
+   ```
+
+4. **Verifique se a pasta `.git` foi criada corretamente:**
+   ```bash
+   ls -la  # No Windows: dir /a
+   ```
+
+Se houver uma subpasta `formacaoJavaWebFullStack` dentro de `formacaoJavaWebFullStack`, isso indica um erro de inicialização do Git. Nesse caso, remova e reinicialize:
+   ```bash
+   rm -rf .git  # No Windows: rmdir /s /q .git
+   git init
+   ```
+
+---
+
+## 3️ - Configurando o Repositório Remoto no GitHub
+
+1. **No GitHub, crie um repositório novo**
+   - Nomeie igual ao projeto (`formacaoJavaWebFullStack`)
+   - NÃO marque a opção de adicionar um `README` ou `.gitignore`
+
+2. **Vincule o repositório remoto ao seu projeto local:**
+   ```bash
+   git remote add origin https://github.com/seu-usuario/formacaoJavaWebFullStack.git
+   ```
+
+3. **Adicione e commit os arquivos corretamente:**
+   ```bash
+   git add .
+   git commit -m "Primeiro commit do projeto"
+   ```
+
+4. **Envie o código para o GitHub:**
+   ```bash
+   git push -u origin main
+   ```
+
+---
+
+## 4️ - Publicando o Projeto via Interface do Eclipse
+
+Se preferir subir o projeto para o GitHub usando a interface gráfica do Eclipse, siga os passos abaixo:
+
+1. **Abra o Eclipse** e clique com o botão direito no projeto.
+   - Selecione `Team` → `Share Project...`
+
+2. **Escolha o Git como sistema de versionamento**
+   - Marque a opção `Use or create repository in parent folder of project`
+   - Selecione a pasta correta do projeto e clique em `Finish`
+
+3. **Crie o primeiro commit:**
+   - Vá em `Window` → `Show View` → `Git Staging`
+   - Arraste os arquivos para a seção `Staged Changes`
+   - Digite uma mensagem de commit (exemplo: "Primeiro commit do projeto")
+   - Clique em `Commit and Push`
+
+4. **Configure o repositório remoto:**
+   - Na janela `Push to Remote Repository`, clique em `Define remote`
+   - Insira a URL do repositório no GitHub (exemplo: `https://github.com/seu-usuario/formacaoJavaWebFullStack.git`)
+   - Clique em `Save and Push`
+
+5. **Confirme que o código foi enviado ao GitHub:**
+   - Acesse o repositório no GitHub e verifique se os arquivos foram enviados corretamente.
+
+---
+
+## 5️ - Importando o Projeto no Eclipse com Git
+
+Se você precisar importar um projeto já existente do GitHub para o Eclipse:
+
+1. **No Eclipse**, vá para:
+   - `File` → `Import` → `Git` → `Projects from Git` → `Clone URI`
+   - Insira a URL do seu repositório: `https://github.com/seu-usuario/formacaoJavaWebFullStack.git`
+   - Escolha a branch (`main`) e clique em `Next`
+   - Selecione a opção `Import as existing Eclipse project`
+   - Finalize a importação
+
+2. **Verifique se a estrutura está correta:**
+   - Certifique-se de que `src/` está dentro de `formacaoJavaWebFullStack`
+   - **Não deve haver uma subpasta duplicada do projeto dentro do próprio projeto!**
+
+---
+
+## 6️ - Problemas Comuns e Soluções
+
+### ❌ **"Cannot move project to target location"**
+**Solução:** Verifique se a pasta contém um `.project` conflitante. Remova arquivos Eclipse antigos e reimporte corretamente.
+
+```bash
+rm -rf .git .settings .classpath .project
+```
+
+### ❌ **"Directory is not empty" ao inicializar Git**
+**Solução:** Se já houver um `.git` antigo, remova e reinicialize corretamente:
+```bash
+rm -rf .git
+```
+
+### ❌ **Pasta do projeto duplicada no GitHub**
+**Solução:** Remova o repositório e reconfigure o Git para não criar subpastas desnecessárias.
+```bash
+git remote remove origin
+git remote add origin https://github.com/seu-usuario/formacaoJavaWebFullStack.git
+git push -u origin main
+```
+
+---
+
+
