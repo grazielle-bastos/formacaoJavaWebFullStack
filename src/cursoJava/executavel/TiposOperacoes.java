@@ -1,6 +1,6 @@
 package cursoJava.executavel;
 
-public class OperacaoInt {
+public class TiposOperacoes {
 
 	public static void main(String[] args) {
 
