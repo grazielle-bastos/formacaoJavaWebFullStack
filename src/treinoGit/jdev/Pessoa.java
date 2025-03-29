@@ -47,4 +47,12 @@ public class Pessoa {
 		this.dataNascimento = dataNascimento;
 	}
 
+	public Date getDataCadastro() {
+		return dataCadastro;
+	}
+
+	public void setDataCadastro(Date dataCadastro) {
+		this.dataCadastro = dataCadastro;
+	}
+
 }
