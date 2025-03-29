@@ -22,6 +22,24 @@ public class TiposOperacoes {
 
 		System.out.println("Média das notas em número decimal = " + (nota5 + nota6 + nota7 + nota8) / 4);
 
+		/*
+		 * --- - CHAR representa uma letra (um único caracter)
+		 */
+
+		char pessoaJuridica = 'J';
+
+		/*
+		 * char letra = 'PF'; -> Não é permitido, restringe a apenas uma única letra.
+		 */
+
+		char pessoaFeminino = 'F';
+
+		if (pessoaFeminino == 'F') {
+			System.out.println("Feminino");
+		} else {
+			System.out.println("Masculino");
+		}
+
 	}
 
 }
