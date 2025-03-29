@@ -14,8 +14,6 @@ public class Pessoa {
 	private Date dataNascimento;
 	
 	private Date dataCadastro;
-	
-	// comentário para reverter
 
 	public String getNome() {
 		return nome;
