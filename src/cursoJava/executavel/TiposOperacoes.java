@@ -44,14 +44,18 @@ public class TiposOperacoes {
 			System.out.println("Pessoa Jurídica" + "\n\n" + "---");
 		}
 		
-		/* String no Java representa um texto de tamanho e tipos de caracteres qualquer */
+		/* String no Java representa um texto de tamanho e tipos de caracteres qualquer 
+		 * +
+		 * Concatenação para unir/juntar dados*/
 		
-		String nome = "Alex Egidio";
-		String cpf = "123.456.789-12";
-		String telefone = "(11) 96354-2144";
-		String endereco = "Rua x";
+		String nome = "Alex Fernando Egidio";
+		String cpf = "488.789.789-85";
+		String telefone = "(45) 99979-5800";
+		String endereco = "Maringá - PR";
 		
-		System.out.println("\n" + "Dados cadastrais: " + "\n\n" + "Nome: " + nome + "\n" + "CPF: " + cpf + "\n" + "Contato: " + telefone + "\n" + "Endereço: " + endereco);
+		String saidaDados = "\n" + "Dados cadastrais: " + "\n\n" + "Nome: " + nome + " " + "CPF: " + cpf + "\n" + "Contato: " + telefone + "\n" + "Endereço: " + endereco;
+		
+		System.out.println(saidaDados);
 
 	}
 
