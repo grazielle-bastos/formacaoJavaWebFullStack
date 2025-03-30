@@ -20,25 +20,38 @@ public class TiposOperacoes {
 		double nota7 = 50;
 		double nota8 = 88;
 
-		System.out.println("Média das notas em número decimal = " + (nota5 + nota6 + nota7 + nota8) / 4);
+		System.out.println("Média das notas em número decimal = " + (nota5 + nota6 + nota7 + nota8) / 4 + "\n\n" + "---" + "\n");
 
 		/*
-		 * --- - CHAR representa uma letra (um único caracter)
-		 */
+		 * --- 
+		 * 
+		 * - CHAR representa uma letra (um único caracter)
+		 * 
+		 * 	char letra = 'PF'; -> Não é permitido, restringe a apenas uma única letra.
+		*/
 
 		char pessoaJuridica = 'J';
 
-		/*
-		 * char letra = 'PF'; -> Não é permitido, restringe a apenas uma única letra.
-		 */
+		char pessoaMasculino = 'M';
 
-		char pessoaFeminino = 'F';
-
-		if (pessoaFeminino == 'F') {
-			System.out.println("Feminino");
-		} else {
+		if (pessoaMasculino == 'M') {
 			System.out.println("Masculino");
+		} else {
+			System.out.println("Feminino");
 		}
+		
+		if (pessoaJuridica == 'J') {
+			System.out.println("Pessoa Jurídica" + "\n\n" + "---");
+		}
+		
+		/* String no Java representa um texto de tamanho e tipos de caracteres qualquer */
+		
+		String nome = "Alex Egidio";
+		String cpf = "123.456.789-12";
+		String telefone = "(11) 96354-2144";
+		String endereco = "Rua x";
+		
+		System.out.println("\n" + "Dados cadastrais: " + "\n\n" + "Nome: " + nome + "\n" + "CPF: " + cpf + "\n" + "Contato: " + telefone + "\n" + "Endereço: " + endereco);
 
 	}
 
