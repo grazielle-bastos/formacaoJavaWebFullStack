@@ -1,4 +1,4 @@
-package treinoGit.jdev;
+package cursoJava.treinoGit;
 
 import java.util.Date;
 
