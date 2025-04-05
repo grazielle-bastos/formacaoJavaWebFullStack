@@ -1,4 +1,4 @@
-package operacoes.logicas.condicionais.relacionais;
+package cursoJava.operacoes;
 
 import javax.swing.JOptionPane;
 

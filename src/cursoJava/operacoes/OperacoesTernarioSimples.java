@@ -1,4 +1,4 @@
-package operacoes.logicas.condicionais.relacionais;
+package cursoJava.operacoes;
 
 public class OperacoesTernarioSimples {
 

@@ -1,4 +1,4 @@
-package entradaDados.opcaoConfirmacao;
+package cursoJava.entradaDados;
 
 import javax.swing.JOptionPane;
 
