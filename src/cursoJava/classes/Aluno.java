@@ -3,7 +3,6 @@ package cursoJava.classes;
 public class Aluno {
 	
 	/*Esta é a nossa classe/objeto que representa Aluno*/
-	public static void main(String[] args) {
 		
 		String nome;
 		int idade;
@@ -16,6 +15,18 @@ public class Aluno {
 		String nomeEscola;
 		String serieMatriculado;
 		
-	}
+		public Aluno() {/*Cria os dados na memória por default do Java*/
+			
+		}
+		
 
+		public Aluno(String nomePadrao) {
+			nome = nomePadrao;
+		}
+		
+		public Aluno(String nomePadrao, int idadePadrao) {
+			nome = nomePadrao;
+			idade = idadePadrao;
+		}
+		
 }
