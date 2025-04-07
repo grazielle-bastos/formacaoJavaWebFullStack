@@ -13,6 +13,8 @@ public class ClasseJava {
 		
 		/*Neste exemplo há um objeto real na memória, não existe, está somente declarado*/
 		
+		/*new Aluno() é uma instancia/construtor (Criação de Objeto)*/
+		/*A variável aluno1 é uma referência ao objeto Aluno*/
 		Aluno aluno1 = new Aluno();
 		
 		Aluno aluno2 = new Aluno();
