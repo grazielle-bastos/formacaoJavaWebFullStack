@@ -5,8 +5,10 @@ public class Aluno {
 	/*Esta é a nossa classe/objeto que representa Aluno*/
 	
 	/*Os atributos do Aluno (representa as caracteristicas do objeto Aluno, no mundo real:  */	
-		String nome;
-		int idade;
+	
+	/*Por default é privado. Pra permitir acessar diretamente os atributos, precisa alterar o objeto para public*/
+		public String nome;
+		public int idade;
 		String dataNascimento;
 		String registroGeral;
 		String numeroCPF;
