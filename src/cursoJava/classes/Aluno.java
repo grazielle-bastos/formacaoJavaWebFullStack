@@ -6,17 +6,20 @@ public class Aluno {
 	
 	/*Os atributos do Aluno (representa as caracteristicas do objeto Aluno, no mundo real:  */	
 	
-	/*Por default é privado. Pra permitir acessar diretamente os atributos, precisa alterar o objeto para public*/
-		public String nome;
-		public int idade;
-		String dataNascimento;
-		String registroGeral;
-		String numeroCPF;
-		String nomeMae;
-		String nomePai;
-		String dataMatricula;
-		String nomeEscola;
-		String serieMatriculado;
+	/*Por default e boas práticas é privado. Pra permitir acessar diretamente os atributos, precisa alterar o objeto para public*/
+		private String nome;
+		private int idade;
+		private String dataNascimento;
+		private String registroGeral;
+		private String numeroCPF;
+		private String nomeMae;
+		private String nomePai;
+		private String dataMatricula;
+		private String nomeEscola;
+		private String serieMatriculado;
+		
+		/* Controle de acesso a variáveis.
+		 */
 		
 		public Aluno() {/*Cria os dados na memória por default do Java*/
 			
@@ -30,6 +33,110 @@ public class Aluno {
 		public Aluno(String nomePadrao, int idadePadrao) {
 			nome = nomePadrao;
 			idade = idadePadrao;
+		}
+		
+		/*Métodos SETTERS E GETTERS do objeto
+		 * SET - Adiciona ou recebe dados para os atributos
+		 * GET - Resgata ou obtém o valor do atributo
+		 */
+		
+		/*Recebe dados*/
+		public void setNome(String nome) {
+			this.nome = nome;
+		}
+		
+		public String getNome() {
+			return nome;
+		}
+
+
+		public int getIdade() {
+			return idade;
+		}
+
+
+		public void setIdade(int idade) {
+			this.idade = idade;
+		}
+
+
+		public String getDataNascimento() {
+			return dataNascimento;
+		}
+
+
+		public void setDataNascimento(String dataNascimento) {
+			this.dataNascimento = dataNascimento;
+		}
+
+
+		public String getRegistroGeral() {
+			return registroGeral;
+		}
+
+
+		public void setRegistroGeral(String registroGeral) {
+			this.registroGeral = registroGeral;
+		}
+
+
+		public String getNumeroCPF() {
+			return numeroCPF;
+		}
+
+
+		public void setNumeroCPF(String numeroCPF) {
+			this.numeroCPF = numeroCPF;
+		}
+
+
+		public String getNomeMae() {
+			return nomeMae;
+		}
+
+
+		public void setNomeMae(String nomeMae) {
+			this.nomeMae = nomeMae;
+		}
+
+
+		public String getNomePai() {
+			return nomePai;
+		}
+
+
+		public void setNomePai(String nomePai) {
+			this.nomePai = nomePai;
+		}
+
+
+		public String getDataMatricula() {
+			return dataMatricula;
+		}
+
+
+		public void setDataMatricula(String dataMatricula) {
+			this.dataMatricula = dataMatricula;
+		}
+
+
+		public String getNomeEscola() {
+			return nomeEscola;
+		}
+
+
+		public void setNomeEscola(String nomeEscola) {
+			this.nomeEscola = nomeEscola;
+		}
+
+
+		public String getSerieMatriculado() {
+			return serieMatriculado;
+		}
+
+
+		public void setSerieMatriculado(String serieMatriculado) {
+			this.serieMatriculado = serieMatriculado;
 		}
 		
 }
