@@ -12,7 +12,7 @@ public class ClasseJava {
 		 */
 
 		/* Objeto ainda não existe na memória */
-		Aluno aluno0;
+		/* Aluno aluno0; */
 
 		/*
 		 * Neste exemplo há um objeto real na memória, não existe, está somente
@@ -43,6 +43,10 @@ public class ClasseJava {
 		aluno1.setDataMatricula("10/10/2024");
 		aluno1.setSerieMatriculado("5");
 		aluno1.setNomeEscola("Escola JDEV Treinamento");
+		aluno1.setNota1(90);
+		aluno1.setNota2(80.8);
+		aluno1.setNota3(70.9);
+		aluno1.setNota4(90.7);
 
 		System.out.println("O nome do primeiro aluno é: " + aluno1.getNome());
 		System.out.println("A idade do primeiro aluno é: " + aluno1.getIdade());
@@ -50,7 +54,8 @@ public class ClasseJava {
 		System.out.println("O Registro Geral do primeiro aluno é: " + aluno1.getRegistroGeral());
 		System.out.println("O número de CPF do primeiro aluno é: " + aluno1.getNumeroCPF());
 		System.out.println("O nome da mãe do primeiro aluno é: " + aluno1.getNomeMae());
-		System.out.println("O nome do pai do primeiro aluno");
+		System.out.println("O nome do pai do primeiro aluno é: " + aluno1.getNomePai());
+		System.out.println("Média da nota do primeiro aluno é: " + aluno1.getMediaNota());
 
 		System.out.println("\n---------------------\n");
 
@@ -67,8 +72,9 @@ public class ClasseJava {
 
 		/* ==================================================================== */
 
-		Aluno aluno3 = new Aluno();
-
+		/*Aluno aluno3 = new Aluno();
+		 */
+		
 		/*
 		 * Inicia aluno com new, cria-se instanciando o objeto (aluno) na memória desta
 		 * forma.
