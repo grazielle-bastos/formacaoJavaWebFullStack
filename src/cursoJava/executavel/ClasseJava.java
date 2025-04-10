@@ -56,7 +56,10 @@ public class ClasseJava {
 		System.out.println("O nome da mãe do primeiro aluno é: " + aluno1.getNomeMae());
 		System.out.println("O nome do pai do primeiro aluno é: " + aluno1.getNomePai());
 		System.out.println("Média da nota do primeiro aluno é: " + aluno1.getMediaNota());
-
+		System.out.println("Resultado = " + (aluno1.getAlunoAprovado() ? "Aprovado" : "Reprovado")); /*Utilização de operador ternário*/
+		System.out.println("Resultado 2 = " + aluno1.getAlunoAprovado2());
+		
+		
 		System.out.println("\n---------------------\n");
 
 		/* ==================================================================== */
