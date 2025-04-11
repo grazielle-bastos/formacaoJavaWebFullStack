@@ -1,5 +1,7 @@
 package cursoJava.classes;
 
+import java.util.Objects;
+
 public class Aluno {
 
 	/* Esta é a nossa classe/objeto que representa Aluno */
@@ -46,8 +48,9 @@ public class Aluno {
 	}
 
 	/*
-	 * Métodos SETTERS E GETTERS do objeto SET - Adiciona ou recebe dados para os atributos 
-	 * GET - Resgata ou obtém o valor do atributo com o return do tipo de dado
+	 * Métodos SETTERS E GETTERS do objeto SET - Adiciona ou recebe dados para os
+	 * atributos GET - Resgata ou obtém o valor do atributo com o return do tipo de
+	 * dado
 	 */
 
 	/* Recebe dados */
@@ -162,13 +165,13 @@ public class Aluno {
 	public void setNota4(double nota4) {
 		this.nota4 = nota4;
 	}
-	
-	/*Método que retorna a média do aluno*/
+
+	/* Método que retorna a média do aluno */
 	public double getMediaNota() {
-		return (nota1+nota2+nota3+nota4) / 4;
+		return (nota1 + nota2 + nota3 + nota4) / 4;
 	}
-	
-	/*Método que retorna true para aprovado e false para reprovado*/
+
+	/* Método que retorna true para aprovado e false para reprovado */
 	public boolean getAlunoAprovado() {
 		double media = this.getMediaNota();
 		if (media >= 7) {
@@ -177,25 +180,31 @@ public class Aluno {
 			return false;
 		}
 	}
-		
-		public String getAlunoAprovado2() {
-			double media = this.getMediaNota();
-			if (media >= 7) {
-				return "Aluno está aprovado";
-			} else {
-				return "Aluno está reprovado";
-			}
-		}
 
-		@Override
-		public String toString() {
-			return "Aluno [nome=" + getNome() + ", idade=" + getIdade() + ", dataNascimento=" + dataNascimento
-					+ ", registroGeral=" + registroGeral + ", numeroCPF=" + numeroCPF + ", nomeMae=" + nomeMae
-					+ ", nomePai=" + nomePai + ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola
-					+ ", serieMatriculado=" + serieMatriculado + ", nota1=" + nota1 + ", nota2=" + nota2 + ", nota3="
-					+ nota3 + ", nota4=" + nota4 + "]";
+	public String getAlunoAprovado2() {
+		double media = this.getMediaNota();
+		if (media >= 7) {
+			return "Aluno está aprovado";
+		} else {
+			return "Aluno está reprovado";
 		}
-		
-		
+	}
 
+	@Override
+	public String toString() {
+		return "Aluno [nome=" + getNome() + ", idade=" + getIdade() + ", dataNascimento=" + dataNascimento
+				+ ", registroGeral=" + registroGeral + ", numeroCPF=" + numeroCPF + ", nomeMae=" + nomeMae
+				+ ", nomePai=" + nomePai + ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola
+				+ ", serieMatriculado=" + serieMatriculado + ", nota1=" + nota1 + ", nota2=" + nota2 + ", nota3="
+				+ nota3 + ", nota4=" + nota4 + "]";
+	}
+	
+	  @Override public int hashCode() { return Objects.hash(nome, numeroCPF); }
+	  
+	  @Override public boolean equals(Object obj) { if (this == obj) return true;
+	  if (obj == null) return false; if (getClass() != obj.getClass()) return
+	  false; Aluno other = (Aluno) obj; return Objects.equals(nome, other.nome) &&
+	  Objects.equals(numeroCPF, other.numeroCPF); }
+	  
+	 
 }
