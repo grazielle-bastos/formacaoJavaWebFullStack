@@ -171,7 +171,7 @@ public class Aluno {
 	/*Método que retorna true para aprovado e false para reprovado*/
 	public boolean getAlunoAprovado() {
 		double media = this.getMediaNota();
-		if (media >= 70) {
+		if (media >= 7) {
 			return true;
 		} else {
 			return false;
@@ -180,11 +180,22 @@ public class Aluno {
 		
 		public String getAlunoAprovado2() {
 			double media = this.getMediaNota();
-			if (media >= 70) {
+			if (media >= 7) {
 				return "Aluno está aprovado";
 			} else {
 				return "Aluno está reprovado";
 			}
 		}
+
+		@Override
+		public String toString() {
+			return "Aluno [nome=" + getNome() + ", idade=" + getIdade() + ", dataNascimento=" + dataNascimento
+					+ ", registroGeral=" + registroGeral + ", numeroCPF=" + numeroCPF + ", nomeMae=" + nomeMae
+					+ ", nomePai=" + nomePai + ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola
+					+ ", serieMatriculado=" + serieMatriculado + ", nota1=" + nota1 + ", nota2=" + nota2 + ", nota3="
+					+ nota3 + ", nota4=" + nota4 + "]";
+		}
+		
+		
 
 }
