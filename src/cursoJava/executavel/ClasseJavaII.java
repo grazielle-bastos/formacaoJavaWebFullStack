@@ -44,10 +44,10 @@ public class ClasseJavaII {
 		aluno1.setDataMatricula(dataMatricula);
 		aluno1.setSerieMatriculado(serieMatriculado);
 		aluno1.setNomeEscola(escola);
-		aluno1.setNota1(Double.parseDouble(nota1)); // Pacote que converte a string para tipo double
-		aluno1.setNota2(Double.parseDouble(nota2));
-		aluno1.setNota3(Double.parseDouble(nota3));
-		aluno1.setNota4(Double.parseDouble(nota4));
+		aluno1.getDisciplina().setNota1(Double.parseDouble(nota1)); // Pacote que converte a string para tipo double
+		aluno1.getDisciplina().setNota2(Double.parseDouble(nota2));
+		aluno1.getDisciplina().setNota3(Double.parseDouble(nota3));
+		aluno1.getDisciplina().setNota4(Double.parseDouble(nota4));
 
 		/*
 		 * Imprimir os dados no console

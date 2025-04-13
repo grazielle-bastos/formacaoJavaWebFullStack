@@ -25,10 +25,10 @@ public class ClasseJavaIII_Disciplinas {
 		String disciplina1 = JOptionPane.showInputDialog("Informe a disciplina 1: ");
 		String nota1 = JOptionPane.showInputDialog("Digite a nota 1 do primeiro aluno: ");
 		
-		String disciplina2 = JOptionPane.showInputDialog("Informe a disciplina 1: ");
+		String disciplina2 = JOptionPane.showInputDialog("Informe a disciplina 2: ");
 		String nota2 = JOptionPane.showInputDialog("Digite a nota 2 do primeiro aluno: ");
 		
-		String disciplina3 = JOptionPane.showInputDialog("Informe a disciplina 1: ");
+		String disciplina3 = JOptionPane.showInputDialog("Informe a disciplina 3: ");
 		String nota3 = JOptionPane.showInputDialog("Digite a nota 3 do primeiro aluno: ");
 		
 		String disciplina4 = JOptionPane.showInputDialog("Informe a disciplina 4: ");
@@ -53,16 +53,16 @@ public class ClasseJavaIII_Disciplinas {
 		aluno1.setSerieMatriculado(serieMatriculado);
 		aluno1.setNomeEscola(escola);
 		
-		aluno1.setNota1(Double.parseDouble(nota1)); // Pacote que converte a string para tipo double
-		aluno1.setNota2(Double.parseDouble(nota2));
-		aluno1.setNota3(Double.parseDouble(nota3));
-		aluno1.setNota4(Double.parseDouble(nota4));
+		//Resgata o objeto e seta o atributo
+		aluno1.getDisciplina().setNota1(Double.parseDouble(nota1)); // Pacote que converte a string para tipo double
+		aluno1.getDisciplina().setNota2(Double.parseDouble(nota2));
+		aluno1.getDisciplina().setNota3(Double.parseDouble(nota3));
+		aluno1.getDisciplina().setNota4(Double.parseDouble(nota4));
 		
-		aluno1.setDisciplina1(disciplina1);
-		aluno1.setDisciplina2(disciplina2);
-		aluno1.setDisciplina3(disciplina3);
-		aluno1.setDisciplina4(disciplina4);
-		
+		aluno1.getDisciplina().setDisciplina1(disciplina1);
+		aluno1.getDisciplina().setDisciplina2(disciplina2);
+		aluno1.getDisciplina().setDisciplina3(disciplina3);
+		aluno1.getDisciplina().setDisciplina4(disciplina4);
 
 		/*
 		 * Imprimir os dados no console
