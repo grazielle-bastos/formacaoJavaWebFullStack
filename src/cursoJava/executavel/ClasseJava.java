@@ -3,7 +3,7 @@ package cursoJava.executavel;
 import javax.swing.JOptionPane;
 
 import cursoJava.classes.Aluno;
-import cursoJava.classes.Disciplina;
+
 
 public class ClasseJava {
 
@@ -62,10 +62,10 @@ public class ClasseJava {
 		aluno1.setDataMatricula(dataMatricula); 
 		aluno1.setSerieMatriculado(serieMatriculado);
 		aluno1.setNomeEscola(escola);
-		aluno1.getDisciplina().setNota1(Double.parseDouble(nota1)); /*Pacote que converte a string para tipo double*/
-		aluno1.getDisciplina().setNota2(Double.parseDouble(nota2));
-		aluno1.getDisciplina().setNota3(Double.parseDouble(nota3));
-		aluno1.getDisciplina().setNota4(Double.parseDouble(nota4));
+//		aluno1.getDisciplina().setNota1(Double.parseDouble(nota1)); /*Pacote que converte a string para tipo double*/
+//		aluno1.getDisciplina().setNota2(Double.parseDouble(nota2));
+//		aluno1.getDisciplina().setNota3(Double.parseDouble(nota3));
+//		aluno1.getDisciplina().setNota4(Double.parseDouble(nota4));
 
 		System.out.println("O nome do primeiro aluno é: " + aluno1.getNome());
 		System.out.println("A idade do primeiro aluno é: " + aluno1.getIdade());
@@ -76,12 +76,12 @@ public class ClasseJava {
 		System.out.println("O nome do pai do primeiro aluno é: " + aluno1.getNomePai());
 		System.out.println("A data da matrícula do primeiro aluno é: " + aluno1.getDataMatricula());
 		System.out.println("A série do primeiro aluno é: " + aluno1.getSerieMatriculado());
-		System.out.println("O nome da escola do primeiro aluno é: " + aluno1.getNomeEscola());
-		aluno1.getDisciplina();
-		System.out.println("A nota 1 do primeiro aluno é: " + aluno1.getDisciplina().getNota1());
-		System.out.println("A nota 2 do primeiro aluno é: " + aluno1.getDisciplina().getNota2());
-		System.out.println("A nota 3 do primeiro aluno é: " + aluno1.getDisciplina().getNota3());
-		System.out.println("A nota 4 do primeiro aluno é: " + aluno1.getDisciplina().getNota4());
+//		System.out.println("O nome da escola do primeiro aluno é: " + aluno1.getNomeEscola());
+//		aluno1.getDisciplina();
+//		System.out.println("A nota 1 do primeiro aluno é: " + aluno1.getDisciplina().getNota1());
+//		System.out.println("A nota 2 do primeiro aluno é: " + aluno1.getDisciplina().getNota2());
+//		System.out.println("A nota 3 do primeiro aluno é: " + aluno1.getDisciplina().getNota3());
+//		System.out.println("A nota 4 do primeiro aluno é: " + aluno1.getDisciplina().getNota4());
 		System.out.println("Média da nota do primeiro aluno é: " + aluno1.getMediaNota());
 		System.out.println("Resultado = " + (aluno1.getAlunoAprovado() ? "Aprovado" : "Reprovado")); /*Utilização de operador ternário*/
 		System.out.println("Resultado 2 = " + aluno1.getAlunoAprovado2());

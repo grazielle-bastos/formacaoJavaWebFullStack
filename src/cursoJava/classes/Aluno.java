@@ -1,5 +1,7 @@
 package cursoJava.classes;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Aluno {
@@ -27,7 +29,19 @@ public class Aluno {
 	private String serieMatriculado;
 	
 	/*Criado/instanciado um novo objeto dentro do objeto Aluno*/
-	private Disciplina disciplina = new Disciplina();
+	//Declarado a lista de disciplinas
+	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
+	
+	//Get e Set da disciplina:
+	
+	public List<Disciplina> getDisciplinas() {
+		return disciplinas;
+	}
+
+	public void setDisciplinas(List<Disciplina> disciplinas) {
+		this.disciplinas = disciplinas;
+	}
+
 
 	/*
 	 * Controle de acesso a variáveis.
@@ -133,17 +147,9 @@ public class Aluno {
 		this.serieMatriculado = serieMatriculado;
 	}
 
-	public Disciplina getDisciplina() {
-		return disciplina;
-	}
-
-	public void setDisciplina(Disciplina disciplina) {
-		this.disciplina = disciplina;
-	}
-
 	/* Método que retorna a média do aluno */
 	public double getMediaNota() {
-		return (disciplina.getNota1() + disciplina.getNota2() + disciplina.getNota3() + disciplina.getNota4()) / 4;
+		return 0;
 	}
 
 	/* Método que retorna true para aprovado e false para reprovado */
