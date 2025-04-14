@@ -1,4 +1,4 @@
-package cursoJava.entradaDados;
+package cursoJava.executavel;
 
 import javax.swing.JOptionPane;
 
