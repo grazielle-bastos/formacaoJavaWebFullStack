@@ -87,6 +87,14 @@ public class ClasseJavaIII_Disciplinas {
 			aluno1.getDisciplinas().add(disciplina);
 		}
 		
+//		Remover alguma disciplina da lista
+		int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina?");
+		
+		if (escolha == 0) {
+			String disciplinaRemover = JOptionPane.showInputDialog("Qual a disciplina [1, 2, 3, ou 4] ?");
+			aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue() -1);
+		}
+		
 		
 ////		Adiciona o objeto
 //		aluno1.getDisciplinas().add(disciplina1);
