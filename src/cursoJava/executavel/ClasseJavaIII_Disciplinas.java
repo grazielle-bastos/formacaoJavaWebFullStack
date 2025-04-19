@@ -15,7 +15,7 @@ public class ClasseJavaIII_Disciplinas {
 		// Instanciar a lista de alunos
 		List<Aluno> alunos = new ArrayList<Aluno>();
 
-		//for com os dados das disciplinas
+		// for com os dados das disciplinas
 		for (int qtd = 1; qtd <= 2; qtd++) {
 
 			/*
@@ -83,7 +83,8 @@ public class ClasseJavaIII_Disciplinas {
 //		disciplina4.setDisciplina("Java Web");
 //		disciplina4.setNota(7);
 
-			//for para definir posições para cada nome e nota da disciplina em determinada quantidade de repetição
+			// for para definir posições para cada nome e nota da disciplina em determinada
+			// quantidade de repetição
 			for (int pos = 1; pos <= 4; pos++) {
 				String nomeDisciplina = JOptionPane.showInputDialog("Qual o nome da disciplina " + pos + "?");
 				String notaDisciplina = JOptionPane.showInputDialog("Qual a nota da disciplina " + pos + "?");
@@ -108,7 +109,7 @@ public class ClasseJavaIII_Disciplinas {
 					posicao++; // + + soma +1
 					continuarRemover = JOptionPane.showConfirmDialog(null, "Continuar a remover");
 				}
-				
+
 			}
 
 ////		Adiciona o objeto
@@ -117,26 +118,37 @@ public class ClasseJavaIII_Disciplinas {
 //		aluno1.getDisciplinas().add(disciplina3);
 //		aluno1.getDisciplinas().add(disciplina4);
 
-				alunos.add(aluno1);
-			
+			alunos.add(aluno1);
+
 		}
 
-			//for com os dados dos alunos
-			for (Aluno aluno : alunos) {
+		// for com os dados dos alunos
+		for (Aluno aluno : alunos) {
 
-				/*
-				 * Imprimir os dados no console
-				 */
-				//adicionando a condição de executar o cálculo de média para exibir no console
-				if (aluno.getNome().equalsIgnoreCase("Alex"))
+			/*
+			 * Imprimir os dados no console
+			 */
+			// adicionando a condição de executar o cálculo de média para exibir no console
+			if (aluno.getNome().equalsIgnoreCase("Alex")) {
+				alunos.remove(aluno);
+				break;
+			} else {
 				System.out.println(aluno); // Descrição do objeto na memória
 				System.out.println("Média do aluno = " + aluno.getMediaNota());
 				System.out.println("Resultado = " + aluno.getAlunoAprovado2());
 				System.out.println("----------------------------------");
-				break;
-
-//		List lista = new ArrayList();
+			}
 
 		}
+
+		for (Aluno aluno : alunos) {
+			System.out.println("Aluno que sobrou na lista: " + aluno.getNome());
+			System.out.println("Suas matérias são: ");
+
+			for (Disciplina disciplina : aluno.getDisciplinas()) {
+				System.out.println(disciplina.getDisciplina());
+			}
+		}
+
 	}
 }
