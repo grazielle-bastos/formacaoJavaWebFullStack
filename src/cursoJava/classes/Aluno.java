@@ -182,6 +182,16 @@ public class Aluno {
 		}
 	}
 	
+	
+	
+	  @Override
+	public String toString() {
+		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
+				+ registroGeral + ", numeroCPF=" + numeroCPF + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
+				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
+				+ serieMatriculado + ", disciplinas=" + disciplinas + "]";
+	}
+
 	  @Override public int hashCode() { return Objects.hash(nome, numeroCPF); }
 	  
 	  @Override public boolean equals(Object obj) { if (this == obj) return true;
