@@ -85,9 +85,9 @@ public class ClasseJavaIII_Disciplinas {
 
 			// for para definir posições para cada nome e nota da disciplina em determinada
 			// quantidade de repetição
-			for (int pos = 1; pos <= 4; pos++) {
-				String nomeDisciplina = JOptionPane.showInputDialog("Qual o nome da disciplina " + pos + "?");
-				String notaDisciplina = JOptionPane.showInputDialog("Qual a nota da disciplina " + pos + "?");
+			for (int posDisciplina = 1; posDisciplina <= 4; posDisciplina++) {
+				String nomeDisciplina = JOptionPane.showInputDialog("Qual o nome da disciplina " + posDisciplina + "?");
+				String notaDisciplina = JOptionPane.showInputDialog("Qual a nota da disciplina " + posDisciplina + "?");
 				Disciplina disciplina = new Disciplina();
 				disciplina.setDisciplina(nomeDisciplina);
 				disciplina.setNota(Double.valueOf(notaDisciplina));
@@ -123,31 +123,53 @@ public class ClasseJavaIII_Disciplinas {
 		}
 
 		// for com os dados dos alunos
-		for (Aluno aluno : alunos) {
+//		for (Aluno aluno : alunos) {
+//
+//			/*
+//			 * Imprimir os dados no console
+//			 */
+//			// adicionando a condição de executar o cálculo de média para exibir no console
+//			if (aluno.getNome().equalsIgnoreCase("Alex")) {
+//				alunos.remove(aluno);
+//				break;
+//			} else {
+//				System.out.println(aluno); // Descrição do objeto na memória
+//				System.out.println("Média do aluno = " + aluno.getMediaNota());
+//				System.out.println("Resultado = " + aluno.getAlunoAprovado2());
+//				System.out.println("----------------------------------");
+//			}
+//
+//		}
 
-			/*
-			 * Imprimir os dados no console
-			 */
-			// adicionando a condição de executar o cálculo de média para exibir no console
-			if (aluno.getNome().equalsIgnoreCase("Alex")) {
-				alunos.remove(aluno);
-				break;
-			} else {
-				System.out.println(aluno); // Descrição do objeto na memória
-				System.out.println("Média do aluno = " + aluno.getMediaNota());
-				System.out.println("Resultado = " + aluno.getAlunoAprovado2());
-				System.out.println("----------------------------------");
+//		for (Aluno aluno : alunos) {
+//			System.out.println("Aluno que sobrou na lista: " + aluno.getNome());
+//			System.out.println("Suas matérias são: ");
+//
+//			for (Disciplina disciplina : aluno.getDisciplinas()) {
+//				System.out.println(disciplina.getDisciplina());
+//			}
+//		}
+		
+		//percorrer o for pelas posições
+		
+		for (int posDadosAlunos = 0; posDadosAlunos < alunos.size(); posDadosAlunos ++) {
+			
+			Aluno aluno = alunos.get(posDadosAlunos);
+			
+			System.out.println("#------------------------------------#");
+			System.out.println("Aluno = " + aluno.getNome());
+			System.out.println("Média do aluno = " + aluno.getMediaNota());
+			System.out.println("Resultado = " + aluno.getAlunoAprovado2());
+			System.out.println("------------------------------------");
+			
+//			for (Disciplina disc : aluno.getDisciplinas()) {
+			
+			for (int posDisciplina = 0; posDisciplina < aluno.getDisciplinas().size(); posDisciplina ++) {
+				Disciplina disc = aluno.getDisciplinas().get(posDisciplina);
+				System.out.println("Matéria = " + disc.getDisciplina() + " Nota" + disc.getNota());
+				
 			}
-
-		}
-
-		for (Aluno aluno : alunos) {
-			System.out.println("Aluno que sobrou na lista: " + aluno.getNome());
-			System.out.println("Suas matérias são: ");
-
-			for (Disciplina disciplina : aluno.getDisciplinas()) {
-				System.out.println(disciplina.getDisciplina());
-			}
+			
 		}
 
 	}
