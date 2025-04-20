@@ -15,7 +15,7 @@ public class ClasseJavaIII_Disciplinas {
 		// Instanciar a lista de alunos
 		List<Aluno> alunos = new ArrayList<Aluno>();
 
-		// for com os dados das disciplinas
+		// for com a qtd de objetos (alunos)
 		for (int qtd = 1; qtd <= 2; qtd++) {
 
 			/*
@@ -85,7 +85,7 @@ public class ClasseJavaIII_Disciplinas {
 
 			// for para definir posições para cada nome e nota da disciplina em determinada
 			// quantidade de repetição
-			for (int posDisciplina = 1; posDisciplina <= 4; posDisciplina++) {
+			for (int posDisciplina = 1; posDisciplina <= 1; posDisciplina++) {
 				String nomeDisciplina = JOptionPane.showInputDialog("Qual o nome da disciplina " + posDisciplina + "?");
 				String notaDisciplina = JOptionPane.showInputDialog("Qual a nota da disciplina " + posDisciplina + "?");
 				Disciplina disciplina = new Disciplina();
@@ -156,6 +156,22 @@ public class ClasseJavaIII_Disciplinas {
 			
 			Aluno aluno = alunos.get(posDadosAlunos);
 			
+			if (aluno.getNome().equalsIgnoreCase("Alex")) {
+				Aluno trocar = new Aluno();
+				trocar.setNome("Aluno foi trocado");
+				
+				Disciplina disciplina = new Disciplina();
+				disciplina.setDisciplina("Java");
+				disciplina.setNota(9.6);
+				
+				trocar.getDisciplinas().add(disciplina);
+				
+				alunos.set(posDadosAlunos, trocar);
+				aluno = alunos.get(posDadosAlunos);
+				
+				
+			}
+			
 			System.out.println("#------------------------------------#");
 			System.out.println("Aluno = " + aluno.getNome());
 			System.out.println("Média do aluno = " + aluno.getMediaNota());
@@ -166,7 +182,7 @@ public class ClasseJavaIII_Disciplinas {
 			
 			for (int posDisciplina = 0; posDisciplina < aluno.getDisciplinas().size(); posDisciplina ++) {
 				Disciplina disc = aluno.getDisciplinas().get(posDisciplina);
-				System.out.println("Matéria = " + disc.getDisciplina() + " Nota" + disc.getNota());
+				System.out.println("Matéria = " + disc.getDisciplina() + " Nota " + disc.getNota());
 				
 			}
 			
