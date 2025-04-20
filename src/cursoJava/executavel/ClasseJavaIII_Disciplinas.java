@@ -1,12 +1,14 @@
 package cursoJava.executavel;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.swing.JOptionPane;
 
 import cursoJava.classes.Aluno;
 import cursoJava.classes.Disciplina;
+import cursoJava.constantes.StatusAluno;
 
 public class ClasseJavaIII_Disciplinas {
 
@@ -14,9 +16,22 @@ public class ClasseJavaIII_Disciplinas {
 
 		// Instanciar a lista de alunos
 		List<Aluno> alunos = new ArrayList<Aluno>();
+		
+		//HashMaps é uma lista que dentro dela temos uma chave que identifica uma sequencia de valores também.
+		HashMap<String, List<Aluno>> maps = new HashMap<String, List <Aluno>>(); //Referencia à lista categorizada por Aprovado, Em Recuperação, Reprovado
+		
+		
+		
+		//Segregar organizando as listas em pedaços. É substituído pelo HashMaps
+//		List<Aluno> alunosAprovados = new ArrayList<Aluno>();
+//		
+//		List<Aluno> alunosRecuperacao = new ArrayList<Aluno>();
+//		
+//		List<Aluno> alunosReprovados = new ArrayList<Aluno>();
 
+;
 		// for com a qtd de objetos (alunos)
-		for (int qtd = 1; qtd <= 2; qtd++) {
+		for (int qtd = 1; qtd <= 5; qtd++) {
 
 			/*
 			 * Entrada de dados
@@ -152,41 +167,40 @@ public class ClasseJavaIII_Disciplinas {
 		
 		//percorrer o for pelas posições
 		
-		for (int posDadosAlunos = 0; posDadosAlunos < alunos.size(); posDadosAlunos ++) {
+		//Antes da varredura da lista de alunos, inicializar os valores dos maps já inicializados anteriormente
+		
+		maps.put(StatusAluno.APROVADO, new ArrayList<Aluno>());
+		maps.put(StatusAluno.RECUPERACAO, new ArrayList<Aluno>());
+		maps.put(StatusAluno.REPROVADO, new ArrayList<Aluno>());
+		
+		//Processar a lista de alunos, informados na caixa de texto
+		for (Aluno aluno: alunos) { // separado em listas
 			
-			Aluno aluno = alunos.get(posDadosAlunos);
-			
-			if (aluno.getNome().equalsIgnoreCase("Alex")) {
-				Aluno trocar = new Aluno();
-				trocar.setNome("Aluno foi trocado");
-				
-				Disciplina disciplina = new Disciplina();
-				disciplina.setDisciplina("Java");
-				disciplina.setNota(9.6);
-				
-				trocar.getDisciplinas().add(disciplina);
-				
-				alunos.set(posDadosAlunos, trocar);
-				aluno = alunos.get(posDadosAlunos);
-				
-				
-			}
-			
-			System.out.println("#------------------------------------#");
-			System.out.println("Aluno = " + aluno.getNome());
-			System.out.println("Média do aluno = " + aluno.getMediaNota());
-			System.out.println("Resultado = " + aluno.getAlunoAprovado2());
-			System.out.println("------------------------------------");
-			
-//			for (Disciplina disc : aluno.getDisciplinas()) {
-			
-			for (int posDisciplina = 0; posDisciplina < aluno.getDisciplinas().size(); posDisciplina ++) {
-				Disciplina disc = aluno.getDisciplinas().get(posDisciplina);
-				System.out.println("Matéria = " + disc.getDisciplina() + " Nota " + disc.getNota());
-				
+			if (aluno.getAlunoAprovado2().equalsIgnoreCase(StatusAluno.APROVADO)) {
+				maps.get(StatusAluno.APROVADO).add(aluno);
+			} else if (aluno.getAlunoAprovado2().equalsIgnoreCase(StatusAluno.RECUPERACAO)) {
+				maps.get(StatusAluno.RECUPERACAO).add(aluno);
+			} else if (aluno.getAlunoAprovado2().equalsIgnoreCase(StatusAluno.REPROVADO)) {
+				maps.get(StatusAluno.REPROVADO).add(aluno);
 			}
 			
 		}
 
+		//Processar as listas
+		
+		System.out.println("----------- LISTA DOS APROVADOS -----------");
+		for (Aluno aluno: maps.get(StatusAluno.APROVADO)) {
+			System.out.println("Aluno(a)" + " " + aluno.getNome() + " " +  aluno.getAlunoAprovado2() + " " + "com média de = " + aluno.getMediaNota());
+		}
+			
+			System.out.println("----------- LISTA EM RECUPERAÇÃO -----------");
+			for (Aluno aluno: maps.get(StatusAluno.RECUPERACAO)) {
+				System.out.println("Aluno(a)" + " " + aluno.getNome() + " " +  aluno.getAlunoAprovado2() + " " + "com média de = " + aluno.getMediaNota());
+			}
+				
+				System.out.println("----------- LISTA DOS REPROVADOS -----------");
+				for (Aluno aluno: maps.get(StatusAluno.REPROVADO)) {
+					System.out.println("Aluno(a)" + " " + aluno.getNome() + " " +  aluno.getAlunoAprovado2() + " " + "com média de = " + aluno.getMediaNota());
+				}
 	}
 }
