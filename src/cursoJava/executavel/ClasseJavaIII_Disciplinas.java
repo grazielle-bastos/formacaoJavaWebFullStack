@@ -13,6 +13,13 @@ import cursoJava.constantes.StatusAluno;
 public class ClasseJavaIII_Disciplinas {
 
 	public static void main(String[] args) {
+		
+		//Implementar validação de permissão de acesso
+		String login = JOptionPane.showInputDialog("Informe o login");
+		String senha = JOptionPane.showInputDialog("Informe a senha");
+		
+		if (login.equalsIgnoreCase("admin") &&
+				senha.equalsIgnoreCase("admin")) {
 
 		// Instanciar a lista de alunos
 		List<Aluno> alunos = new ArrayList<Aluno>();
@@ -202,5 +209,7 @@ public class ClasseJavaIII_Disciplinas {
 				for (Aluno aluno: maps.get(StatusAluno.REPROVADO)) {
 					System.out.println("Aluno(a)" + " " + aluno.getNome() + " " +  aluno.getAlunoAprovado2() + " " + "com média de = " + aluno.getMediaNota());
 				}
+		
+		}
 	}
 }
