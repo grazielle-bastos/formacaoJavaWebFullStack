@@ -6,9 +6,9 @@ import java.util.Objects;
 
 import cursoJava.constantes.StatusAluno;
 
-public class Aluno {
-
-	/* Esta é a nossa classe/objeto que representa Aluno */
+/* Esta é a classe/objeto que representa Aluno, com a herança aplicada */
+//Classe filha de Pessoa, que extende de Pessoa
+public class Aluno extends Pessoa {
 
 	/*
 	 * Os atributos do Aluno (representa as caracteristicas do objeto Aluno, no
@@ -19,17 +19,9 @@ public class Aluno {
 	 * Por default e boas práticas é privado. Pra permitir acessar diretamente os
 	 * atributos, precisa alterar o objeto para public
 	 */
-	private String nome;
-	private int idade;
-	private String dataNascimento;
-	private String registroGeral;
-	private String numeroCPF;
-	private String nomeMae;
-	private String nomePai;
 	private String dataMatricula;
 	private String nomeEscola;
 	private String serieMatriculado;
-	
 	/*Criado/instanciado um novo objeto dentro do objeto Aluno*/
 	//Declarado a lista de disciplinas
 	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
@@ -69,62 +61,6 @@ public class Aluno {
 	 */
 
 	/* Recebe dados */
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public int getIdade() {
-		return idade;
-	}
-
-	public void setIdade(int idade) {
-		this.idade = idade;
-	}
-
-	public String getDataNascimento() {
-		return dataNascimento;
-	}
-
-	public void setDataNascimento(String dataNascimento) {
-		this.dataNascimento = dataNascimento;
-	}
-
-	public String getRegistroGeral() {
-		return registroGeral;
-	}
-
-	public void setRegistroGeral(String registroGeral) {
-		this.registroGeral = registroGeral;
-	}
-
-	public String getNumeroCPF() {
-		return numeroCPF;
-	}
-
-	public void setNumeroCPF(String numeroCPF) {
-		this.numeroCPF = numeroCPF;
-	}
-
-	public String getNomeMae() {
-		return nomeMae;
-	}
-
-	public void setNomeMae(String nomeMae) {
-		this.nomeMae = nomeMae;
-	}
-
-	public String getNomePai() {
-		return nomePai;
-	}
-
-	public void setNomePai(String nomePai) {
-		this.nomePai = nomePai;
-	}
-
 	public String getDataMatricula() {
 		return dataMatricula;
 	}
@@ -183,23 +119,32 @@ public class Aluno {
 			return StatusAluno.REPROVADO;
 		}
 	}
-	
-	
-	
+
 	  @Override
 	public String toString() {
-		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
-				+ registroGeral + ", numeroCPF=" + numeroCPF + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
-				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
-				+ serieMatriculado + ", disciplinas=" + disciplinas + "]";
+		return "Aluno [dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
+				+ serieMatriculado + ", disciplinas=" + disciplinas + ", nome=" + nome + ", idade=" + idade
+				+ ", dataNascimento=" + dataNascimento + ", registroGeral=" + registroGeral + ", numeroCPF=" + numeroCPF
+				+ ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + "]";
 	}
 
-	  @Override public int hashCode() { return Objects.hash(nome, numeroCPF); }
-	  
-	  @Override public boolean equals(Object obj) { if (this == obj) return true;
-	  if (obj == null) return false; if (getClass() != obj.getClass()) return
-	  false; Aluno other = (Aluno) obj; return Objects.equals(nome, other.nome) &&
-	  Objects.equals(numeroCPF, other.numeroCPF); }
-	  
+	  @Override
+	  public int hashCode() {
+		return Objects.hash(dataMatricula, disciplinas, nomeEscola, serieMatriculado);
+	  }
+
+	  @Override
+	  public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Aluno other = (Aluno) obj;
+		return Objects.equals(dataMatricula, other.dataMatricula) && Objects.equals(disciplinas, other.disciplinas)
+				&& Objects.equals(nomeEscola, other.nomeEscola)
+				&& Objects.equals(serieMatriculado, other.serieMatriculado);
+	  }
 	 
 }
