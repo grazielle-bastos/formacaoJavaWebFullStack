@@ -147,4 +147,20 @@ public class Aluno extends Pessoa {
 				&& Objects.equals(serieMatriculado, other.serieMatriculado);
 	  }
 	 
+	  @Override //identifica método sobreescito
+	public boolean pessoaMaiorIdade() {
+		  
+//		return super.pessoaMaiorIdade();
+		return idade >= 21;
+	}
+	  
+	  public String msgMaiorIdade( ) {
+		  return this.pessoaMaiorIdade() ? "Oba! Aluno é maior de idade" : "Ixi! Aluno é menor de idade";	  
+		  }
+
+	  @Override
+	  public double salario() {
+		return 1500.90;
+	  }
+	  
 }

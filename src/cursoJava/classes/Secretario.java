@@ -33,4 +33,14 @@ public class Secretario extends Pessoa {
 				+ registroGeral + ", numeroCPF=" + numeroCPF + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + "]";
 	}
 
+	  public String msgMaiorIdade( ) {
+		  return this.pessoaMaiorIdade() ? "Oba! Secretário é maior de idade" : "Ixi! Secretário é menor de idade";	
+	
+	  }
+	  
+	  @Override
+	  public double salario() {
+		return 1800.80 * 0.9;
+	  }
+
 }

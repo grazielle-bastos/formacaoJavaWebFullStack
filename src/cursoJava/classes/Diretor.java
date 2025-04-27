@@ -25,7 +25,7 @@ public class Diretor extends Pessoa {
 	public void setTitulacao(String titulacao) {
 		this.titulacao = titulacao;
 	}
-	@Override
+	@Override //método que já existe no Java
 	public String toString() {
 		return "Diretor [registroEducacao=" + registroEducacao + ", tempoDirecao=" + tempoDirecao + ", titulacao="
 				+ titulacao + ", nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento
@@ -33,4 +33,14 @@ public class Diretor extends Pessoa {
 				+ ", nomePai=" + nomePai + "]";
 	}
 	
+	  public String msgMaiorIdade( ) {
+		  return this.pessoaMaiorIdade() ? "Oba! Diretor é maior de idade" : "Ixi! Diretor é menor de idade";
+	
+	  }
+	  
+	  @Override
+	  public double salario() {
+		return 3900.78;
+	  }
+	  
 }

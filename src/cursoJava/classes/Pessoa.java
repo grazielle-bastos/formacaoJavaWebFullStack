@@ -1,7 +1,7 @@
 package cursoJava.classes;
 
 //Herança - Classe pai, ou classe master, ou superClasse. - (Possui os atributos/métodos que são comuns a todos os objetos filhos)
-public class Pessoa {
+public abstract class Pessoa {
 	
 	protected String nome;
 	protected int idade;
@@ -10,6 +10,9 @@ public class Pessoa {
 	protected String numeroCPF;
 	protected String nomeMae;
 	protected String nomePai;
+	
+	//Método abstrato é que fica na classe pai, é obrigatório para as classes filhas
+	public abstract double salario();
 	
 	public String getNome() {
 		return nome;
@@ -54,6 +57,10 @@ public class Pessoa {
 		this.nomePai = nomePai;
 	}
 	
+	//Retorna true caso seja acima de 18 anos, senão false. 
+	public boolean pessoaMaiorIdade() {
+		return idade >= 18;
+	}
 	
 
 }
